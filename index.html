@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Title -->
+    <title>GAaMa</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="#">
+          <img src="images/logo.png" class="logo" />
+        </a>
+        <i class="fa-solid fa-bars"></i>
+        <nav>
+          <ul>
+            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">SPECIFICATIONS</a></li>
+            <li><a href="#">PRODUCTS</a></li>
+            <li><a href="#">CONNECT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="main">
+      <div class="container">
+        <div class="main-left">
+          <h1>
+            THE <br />
+            REAL <br />
+            SOUND
+          </h1>
+        </div>
+        <div class="main-right">
+          <p>Click Here To Listen</p>
+          <img src="images/play.png" id="playButton" />
+        </div>
+      </div>
+    </section>
+    <audio id="mySong">
+      <source src="media/CA7BY.mp3" type="audio/mp3" />
+    </audio>
+    <script>
+      var mySong = document.getElementById("mySong");
+      var playButton = document.getElementById("playButton");
+
+      playButton.onclick = function () {
+        if (mySong.paused) {
+          mySong.play();
+          playButton.src = "images/pause.png";
+        } else {
+          mySong.pause();
+          playButton.src = "images/play.png";
+        }
+      };
+    </script>
+  </body>
+</html>
